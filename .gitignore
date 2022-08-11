@@ -1,4 +1,4 @@
 /node_modules
-/public/NavBar.html
-/public/StyleNavBar.css
+# /public/NavBar.html
+# /public/StyleNavBar.css
 /instruction.txt

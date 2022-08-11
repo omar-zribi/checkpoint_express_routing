@@ -56,23 +56,33 @@
         "Friday",
         "Saturday",
       ];
+      let FDay= days[new Date().getDay()];
+      // let Fdays=[new Date().getDay()];
+      let FDate=new Date().getDate();
+      let FMonth=months[new Date().getMonth()];
+      let FYears=new Date().getFullYear();
+      let Fhours=new Date().getHours();
+      let FMinutes=new Date().getMinutes();
+      let FSecondes=new Date().getSeconds();
+
+      (FDate<10)?FDate=`0${FDate}`:FDate=FDate;
+      (Fhours<10)?Fhours=`0${Fhours}`:Fhours=Fhours;
+      (FMinutes<10)?FMinutes=`0${FMinutes}`:FMinutes=FMinutes;
+      (FSecondes<10)?FSecondes=`0${FSecondes}`:FSecondes=FSecondes;
 
       let dformat =
-        [
-          days[new Date().getDay()],
-          new Date().getDate(),
-          months[new Date().getMonth()],
-          new Date().getFullYear(),
+        [FDay,FDate,FMonth,FYears,
         ].join(" ") +
         " " +
-        [
-          new Date().getHours(),
-          new Date().getMinutes(),
-          new Date().getSeconds(),
+        [Fhours,FMinutes,FSecondes,
         ].join(":");
       // console.log(dformat)
       document.querySelector("#datetime").innerHTML = `${dformat}`;
       document.querySelector("#datetime").style.margin = "75px 630px";
+      
+      document.querySelector("#datetime").style.height = "auto";
+      document.querySelector("#datetime").style.width = "auto";
+
       document.querySelector("#datetime").style.position = "fixed";
       document.querySelector("#datetime").style.fontSize = "18px";
       document.querySelector("body").style.backgroundColor = "black";

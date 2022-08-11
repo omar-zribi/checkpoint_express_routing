@@ -21,18 +21,19 @@ function display() {
   let sec = today.getSeconds();
   let day = today.getDate();
 
-  day = day < 10 ? (day = "0" + day) : day;
-  min = min < 10 ? (min = "0" + min) : min;
-  sec = sec < 10 ? (sec = "0" + sec) : sec;
+  (day< 10 )?day=`0${day}` : day=`${day}`;
+  (min< 10 )?min=`0${min}` : min=`${min}`;
+  (sec< 10 )?sec=`0${sec}` : sec=`${sec}`;
+  (sec< 10 )?sec=`0${sec}` : sec=`${sec}`;
+  (hour< 10 )?hour=`0${hour}` : hour=`${hour}`;
 
-  hour = hour < 10 ? (hour = "0" + hour) : hour;
   document.querySelector("#dateD").innerHTML = `${day} `;
   document.querySelector("#dateM").innerHTML = `${month} `;
   document.querySelector("#dateY").innerHTML = `${today.getFullYear()}`;
   document.querySelector("#timeH").innerHTML = `${hour} `;
-  document.querySelector("#timeM").innerHTML = `${min} `;
+  document.querySelector("#timeM").innerHTML = `${min}  `;
   document.querySelector("#timeS").innerHTML = `${sec}`;
+  setInterval(display, 100);
 }
 
-console.log(DS);
-setInterval(display, 100);
+// console.log(DS);

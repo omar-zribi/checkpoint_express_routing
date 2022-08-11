@@ -3,8 +3,10 @@ const http=require('http')
 const app = express();
 const PORT = process.env.PORT || 30010;
 const path = require("path");
-app.use(express.static(path.join(__dirname, "/public/")));
 
+
+
+// please start server then control terminal
 var date = new Date();
 var current_hour = date.getHours();
 var current_minutes = date.getMinutes();
@@ -40,21 +42,15 @@ console.log('dans les jours de travail',(JLundi && JVendredi))
 F=(((HDM && HFM) || (HDAM && HFAM))&&(JLundi && JVendredi))
 console.log('dans les normes=',F)
 
-F===false?
+F===true?
 app.listen(PORT, (current_hour)=>{
   console.log(`server is closed `)
-  app.get("/",(req,res)=>res.sendFile(path.join(__dirname,"public","ClosedServer.html"),))
-  app.get("/OurServices",(req,res)=>res.sendFile(path.join(__dirname,"public","ClosedServer.html")))
-  app.get("/ContactUs",(req,res)=>res.sendFile(path.join(__dirname,"public","ClosedServer.html")))})
+app.use(express.static(path.join(__dirname, "/public/publicServerClosed")));
+app.get("/",(req,res)=>res.sendFile(path.join(__dirname,"/public/publicServerClosed","ClosedServer.html")))
+
+})
   :app.listen(PORT, (current_hour)=>{
-  console.log(`server is runing http://localhost:${PORT}/`)
-  app.get("/",(req,res)=>res.sendFile(path.join(__dirname,"public","Home.html")))
-  app.get("/OurServices",(req,res)=>res.sendFile(path.join(__dirname,"public","OurServices.html")))
-  app.get("/ContactUs",(req,res)=>res.sendFile(path.join(__dirname,"public","ContactUs.html")))})
-// if (6< current_hour < 12) {
-  // console.log(`server is closed `)
-  // app.get("/closed",(req,res)=>res.sendFile(path.join(__dirname,"public","ClosedServer.html"),));
-  // app.get("/OurServicesclosed",(req,res,next)=>res.sendFile(path.join(__dirname,"public","ClosedServer.html"),next()));
-  // app.get("/ContactUsclosed",(req,res)=>res.sendFile(path.join(__dirname,"public","ClosedServer.html")));
-// }else{
-// }
+    console.log(`server is runing http://localhost:${PORT}/`)
+app.use(express.static(path.join(__dirname, "/public/publicServerOpen")));
+app.get("/",(req,res)=>res.sendFile(path.join(__dirname,"/public/publicServerOpen","Home.html")))
+  })

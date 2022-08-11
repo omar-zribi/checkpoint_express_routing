@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      /* style NavBar  */
+      * {
+        margin: -8.5px 0 0 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: black;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      #datetime {
+        color: white;
+        background-color: red;
+      }
+      header {
+        position: relative;
+        max-width: 75rem;
+        margin: 1.1rem auto;
+        padding: 0.9rem;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        outline: 3px solid #069370;
+        outline-offset: 2px;
+        color: #069370;
+        height: 3.75rem;
+        font-size: 1.5rem;
+        line-height: 3.7rem;
+        text-decoration: none;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+        font-weight: 500;
+      }
+      .logo h1#partA {
+        margin-top: -15px;
+      }
+      .logo h1#partB {
+        margin-top: -28px;
+      }
+      nav ul {
+        display: flex;
+      }
+      nav ul li {
+        list-style: none;
+        margin-left: 150px;
+        margin-top: 10px;
+      }
+      nav ul li a {
+        display: block;
+        margin: 0.6rem 0;
+        padding: 0.6rem 1.25rem;
+        text-decoration: none;
+        color: #262626;
+      }
+
+      nav ul li a.active,
+      nav ul li a:hover {
+        background: #069370;
+        color: #fff;
+        transition: 0.5s;
+      }
+
+      @media (max-width: 1200px) {
+        header {
+          margin: 1.2rem;
+        }
+      }
+
+      @media (max-width: 810px) {
+        header {
+          position: relative;
+        }
+
+        .menu-toggle {
+          position: absolute;
+          right: 5%;
+          display: block;
+          width: 2.5rem;
+          height: 2.5rem;
+          margin: 0.6rem;
+          cursor: pointer;
+          text-align: center;
+          font-size: 1.2rem;
+          color: #069370;
+        }
+
+        .menu-toggle::before {
+          content: "\f0c9";
+          font-family: fontAwesome;
+          line-height: 2.6rem;
+          font-size: 1.6rem;
+        }
+
+        .menu-toggle.active::before {
+          content: "\f00d";
+          font-size: 1.6rem;
+        }
+
+        nav {
+          display: none;
+        }
+
+        nav.active {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        nav.active ul {
+          display: block;
+          position: absolute;
+          top: 89px;
+          left: 0;
+          width: 100%;
+          background: #fff;
+          text-align: center;
+        }
+
+        nav ul li a {
+          margin: 0;
+        }
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NavBar</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="logo"
+        ><h1 id="partA">prived</h1>
+        <h1 id="partB">server</h1>
+      </a>
+      <div class="menu-toggle"></div>
+      <nav>
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/OurServices">Our Services</a></li>
+          <li><a href="ContactUs">Contact Us</a></li>
+          <li>
+            <a><p id="datetime"></p></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- javascript of NavBar -->
+    
+    <script>
+      document.querySelector("#datetime").innerHTML = `omar`;
+      
+        () => {
+          const today = new Date();
+          const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ];
+          const d = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ]
+
+          // let day = d[today.getDate()];
+          // console.log('day=',day);
+          // let Day = today.getDay();
+          let Month = Months[today.getMonth()];
+          let Year = today.getFullYear();
+          console.log(` ${Month} ${Year}`);
+        }
+          
+        
+    </script>
+  </body>
+</html>
