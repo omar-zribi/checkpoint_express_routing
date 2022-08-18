@@ -3,6 +3,10 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT||3001;
 
+// create new file touch 
+// 1- instal touch with  npm i touch-cli  
+// 2- touch namefile.extention 
+
 var objDate = new Date();
     var hours = objDate.getHours();
     var day = objDate.getDay();
