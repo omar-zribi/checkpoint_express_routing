@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital@1&family=Oswald:wght@600&display=swap");
+*{
+  user-select: none;
+}
+html {
+  box-sizing: border-box;
+  font-family: fantasy;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+body {
+  color: white;
+  background-color: rgb(0, 0, 20);
+}
+header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+}
+a {
+  text-decoration: none;
+}
+
+
+.logo  h1{
+  background: linear-gradient(360deg, rgba(255, 0, 0, 1), rgba(0,0,0,.8) 50%),
+              linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,.0) 90%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  color: white;
+  position: fixed,left;
+}
+.logo  h1:hover{
+  color:tomato;
+  background: none;
+}
+nav {
+  text-decoration: none;
+  display: flex;
+}
+nav .nav-link {
+  text-decoration: none;
+  font-size: large;
+  color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 25px;
+}
+.nav-link#lien:hover {
+  color: tomato;
+}
+#datetime {
+  cursor: no-drop;
+  margin-top: -2px;
+  text-align: center;
+}
+p.under {
+  color: red;
+  text-align: center;
+  font-size: x-small;
+  animation: UNDER 0.5s infinite;
+}
+@keyframes UNDER {
+  from {
+    color: #002333;
+  }
+  to {
+    color: red;
+  }
+}
+.deuxPointSM {
+  color: white;
+  text-align: center;
+  animation: deuxPointSM 1000ms infinite;
+}
+@keyframes deuxPointSM {
+  from {
+    color: #002333;
+  }
+  to {
+    color: white;
+  }
+}
+
+main {
+  text-align: center;
+}
+#LOG {
+  height: 390px;
+  width: 550px;
+  border: none;
+  user-select: none;
+}
+footer {
+  display: flex;
+  position: relative;
+  width:100%;
+  justify-content: space-evenly;
+}

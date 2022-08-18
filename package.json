@@ -1,13 +1,13 @@
 {
-  "name": "checkpoint_express_routing",
+  "name": "checkpointexpressrouting",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server" 
-
+    "start": "nodemon server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
